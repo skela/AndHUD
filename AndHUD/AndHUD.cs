@@ -5,6 +5,7 @@ using Android.Widget;
 using Android.Content;
 using System.Threading;
 using System.Threading.Tasks;
+using Android.Graphics;
 
 namespace AndroidHUD
 {
@@ -38,6 +39,7 @@ namespace AndroidHUD
 
 		readonly object dialogLock = new object();
 
+        public Color? SystemColor;
 
 		public void Show (Context context, string status = null, int progress = -1, MaskType maskType = MaskType.Black, TimeSpan? timeout = null, Action clickCallback = null, bool centered = true, Action cancelCallback = null)
 		{
@@ -113,8 +115,11 @@ namespace AndroidHUD
 
 						statusText = view.FindViewById<TextView>(Resource.Id.textViewStatus);
 
+                        var progressBar = view.FindViewById<ProgressBar>(Resource.Id.loadingProgressBar);
 						if (!spinner)
-							view.FindViewById<ProgressBar>(Resource.Id.loadingProgressBar).Visibility = ViewStates.Gone;
+                            progressBar.Visibility = ViewStates.Gone;
+                        else if (SystemColor!=null)                            
+                            progressBar.IndeterminateDrawable.SetColorFilter(SystemColor.Value, PorterDuff.Mode.SrcIn);
 
 						if (maskType != MaskType.Black)
 							view.SetBackgroundResource(Resource.Drawable.roundedbgdark);
