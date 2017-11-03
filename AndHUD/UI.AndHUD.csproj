@@ -15,7 +15,7 @@
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <AssemblyName>AndHUD</AssemblyName>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <AndroidTlsProvider></AndroidTlsProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -70,8 +70,8 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_successstatus.png" />
     <AndroidResource Include="Resources\drawable\roundedbg.xml" />
     <AndroidResource Include="Resources\drawable\roundedbgdark.xml" />
-    <AndroidResource Include="Resources\layout\loading.axml" />
-    <AndroidResource Include="Resources\layout\loadingprogress.axml" />
+    <AndroidResource Include="Resources\layout\loading.xml" />
+    <AndroidResource Include="Resources\layout\loadingprogress.xml" />
     <AndroidResource Include="Resources\layout\loadingimage.xml" />
     <AndroidResource Include="Resources\values\strings.xml" />
   </ItemGroup>
